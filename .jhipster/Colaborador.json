@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usuario",
+            "otherEntityName": "usuario",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "colaborador"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "municipio",
+            "otherEntityName": "municipio",
+            "otherEntityRelationshipName": "colaborador"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "cargo",
+            "fieldType": "CargoEnum",
+            "fieldValues": "ADMINISTRADOR,AUDITOR,PRESIDENTE,DIRETOR,GERENTE,ANALISTA",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170202111816",
+    "entityTableName": "colaborador",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "searchEngine": "elasticsearch"
+}

@@ -1,0 +1,65 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "analise",
+            "otherEntityName": "analise",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "itens",
+            "otherEntityName": "parecerItens",
+            "otherEntityRelationshipName": "parecerTecnico"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "StatusGeralEnum",
+            "fieldValues": "ATIVO,CANCELADO,INVALIDO,DEFERIDO,INDEFERIDO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "parecNumero",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "parecObjetivo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "parecAtendimentoIn",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "parecObservacao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "parecDataInicio",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170202111812",
+    "entityTableName": "parecer_tecnico",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "searchEngine": "elasticsearch"
+}

@@ -1,0 +1,8 @@
+{
+    "smApp": {
+        "TipoParecerItensEnum" : {
+            "null": "",
+            "FENOMENOS": "FENOMENOS"
+        }
+    }
+}

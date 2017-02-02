@@ -1,0 +1,24 @@
+{
+    "smApp": {
+        "analise" : {
+            "home": {
+                "title": "Analises",
+                "createLabel": "Criar novo Analise",
+                "createOrEditLabel": "Criar ou editar Analise",
+                "search": "Pesquisar por Analise"
+            },
+            "created": "Um novo Analise é criado com o identificador {{ param }}",
+            "updated": "Um Analise é atualizado com o identificador {{ param }}",
+            "deleted": "Um Analise é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Analise {{ id }}?"
+            },
+            "detail": {
+                "title": "Analise"
+            },
+            "status": "Status",
+            "pareceres": "Pareceres",
+            "requerimento": "Requerimento"
+        }
+    }
+}

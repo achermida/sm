@@ -1,0 +1,106 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myParecerTecnicoLabel" data-translate="smApp.parecerTecnico.home.createOrEditLabel">Create or edit a Parecer Tecnico</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.parecerTecnico.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.parecerTecnico.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.parecerTecnico.status" for="field_status">Status</label>
+            <select class="form-control" name="status" ng-model="vm.parecerTecnico.status" id="field_status" required>
+                <option value="ATIVO" data-translate="smApp.StatusGeralEnum.ATIVO">ATIVO</option>
+                <option value="CANCELADO" data-translate="smApp.StatusGeralEnum.CANCELADO">CANCELADO</option>
+                <option value="INVALIDO" data-translate="smApp.StatusGeralEnum.INVALIDO">INVALIDO</option>
+                <option value="DEFERIDO" data-translate="smApp.StatusGeralEnum.DEFERIDO">DEFERIDO</option>
+                <option value="INDEFERIDO" data-translate="smApp.StatusGeralEnum.INDEFERIDO">INDEFERIDO</option>
+            </select>
+            <div ng-show="editForm.status.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.status.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.parecerTecnico.parecNumero" for="field_parecNumero">Parec Numero</label>
+            <input type="text" class="form-control" name="parecNumero" id="field_parecNumero"
+                    ng-model="vm.parecerTecnico.parecNumero"
+                    required />
+            <div ng-show="editForm.parecNumero.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.parecNumero.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.parecerTecnico.parecObjetivo" for="field_parecObjetivo">Parec Objetivo</label>
+            <input type="text" class="form-control" name="parecObjetivo" id="field_parecObjetivo"
+                    ng-model="vm.parecerTecnico.parecObjetivo"
+                    required />
+            <div ng-show="editForm.parecObjetivo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.parecObjetivo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.parecerTecnico.parecAtendimentoIn" for="field_parecAtendimentoIn">Parec Atendimento In</label>
+            <input type="checkbox" class="form-control" name="parecAtendimentoIn" id="field_parecAtendimentoIn"
+                    ng-model="vm.parecerTecnico.parecAtendimentoIn"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.parecerTecnico.parecObservacao" for="field_parecObservacao">Parec Observacao</label>
+            <input type="text" class="form-control" name="parecObservacao" id="field_parecObservacao"
+                    ng-model="vm.parecerTecnico.parecObservacao"
+                    required />
+            <div ng-show="editForm.parecObservacao.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.parecObservacao.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.parecerTecnico.parecDataInicio" for="field_parecDataInicio">Parec Data Inicio</label>
+                <div class="input-group">
+                    <input id="field_parecDataInicio" type="text" class="form-control" name="parecDataInicio" uib-datepicker-popup="{{dateformat}}" ng-model="vm.parecerTecnico.parecDataInicio" is-open="vm.datePickerOpenStatus.parecDataInicio"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('parecDataInicio')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.parecDataInicio.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.parecDataInicio.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="smApp.parecerTecnico.analise" for="field_analise">Analise</label>
+            <select class="form-control" id="field_analise" name="analise" ng-model="vm.parecerTecnico.analise" ng-options="analise as analise.id for analise in vm.analises track by analise.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

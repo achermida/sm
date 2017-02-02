@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="smApp.endereco.detail.title">Endereco</span> {{vm.endereco.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="smApp.endereco.logradouro">Logradouro</span></dt>
+        <dd>
+            <span>{{vm.endereco.logradouro}}</span>
+        </dd>
+        <dt><span data-translate="smApp.endereco.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.endereco.numero}}</span>
+        </dd>
+        <dt><span data-translate="smApp.endereco.bairro">Bairro</span></dt>
+        <dd>
+            <span>{{vm.endereco.bairro}}</span>
+        </dd>
+        <dt><span data-translate="smApp.endereco.complemento">Complemento</span></dt>
+        <dd>
+            <span>{{vm.endereco.complemento}}</span>
+        </dd>
+        <dt><span data-translate="smApp.endereco.cep">Cep</span></dt>
+        <dd>
+            <span>{{vm.endereco.cep}}</span>
+        </dd>
+        <dt><span data-translate="smApp.endereco.municipio">Municipio</span></dt>
+        <dd>
+            <a ui-sref="municipio-detail({id:vm.endereco.municipio.id})">{{vm.endereco.municipio.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="endereco-detail.edit({id:vm.endereco.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

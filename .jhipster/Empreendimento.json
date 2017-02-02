@@ -1,0 +1,90 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "endereco",
+            "otherEntityName": "endereco",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "empreendimento"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "responsavel",
+            "otherEntityName": "usuario",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "empreendimento"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "processos",
+            "otherEntityName": "processo",
+            "otherEntityRelationshipName": "empreendimento"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "licencas",
+            "otherEntityName": "licenca",
+            "otherEntityRelationshipName": "empreendimento"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "empreendimentos",
+            "relationshipName": "responsaveis",
+            "otherEntityName": "usuario",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "cnpj",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "razaoSocial",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "x",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "y",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dtCadastro",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "StatusGeralEnum",
+            "fieldValues": "ATIVO,CANCELADO,INVALIDO,DEFERIDO,INDEFERIDO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170202015124",
+    "javadoc": "Classe principal do nosso sistema de financas",
+    "entityTableName": "empreendimento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "searchEngine": "elasticsearch"
+}

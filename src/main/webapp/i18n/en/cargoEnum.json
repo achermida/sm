@@ -1,0 +1,13 @@
+{
+    "smApp": {
+        "CargoEnum" : {
+            "null": "",
+            "ADMINISTRADOR": "ADMINISTRADOR",
+            "AUDITOR": "AUDITOR",
+            "PRESIDENTE": "PRESIDENTE",
+            "DIRETOR": "DIRETOR",
+            "GERENTE": "GERENTE",
+            "ANALISTA": "ANALISTA"
+        }
+    }
+}

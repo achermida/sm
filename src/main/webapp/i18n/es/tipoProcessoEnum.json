@@ -1,0 +1,11 @@
+{
+    "smApp": {
+        "TipoProcessoEnum" : {
+            "null": "",
+            "LICENCIAMENTO": "LICENCIAMENTO",
+            "AUTORIZACAOCORTE": "AUTORIZACAOCORTE",
+            "FAUNA": "FAUNA",
+            "CERTLAB": "CERTLAB"
+        }
+    }
+}

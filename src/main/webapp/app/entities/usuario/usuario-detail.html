@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="smApp.usuario.detail.title">Usuario</span> {{vm.usuario.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="smApp.usuario.status">Status</span></dt>
+        <dd>
+            <span data-translate="{{'smApp.StatusGeralEnum.' + vm.usuario.status}}">{{vm.usuario.status}}</span>
+        </dd>
+        <dt><span data-translate="smApp.usuario.nome">Nome</span></dt>
+        <dd>
+            <span>{{vm.usuario.nome}}</span>
+        </dd>
+        <dt><span data-translate="smApp.usuario.cpf">Cpf</span></dt>
+        <dd>
+            <span>{{vm.usuario.cpf}}</span>
+        </dd>
+        <dt><span data-translate="smApp.usuario.contato">Contato</span></dt>
+        <dd>
+            <a ui-sref="contato-detail({id:vm.usuario.contato.id})">{{vm.usuario.contato.id}}</a>
+        </dd>
+        <dt><span data-translate="smApp.usuario.user">User</span></dt>
+        <dd>
+            {{vm.usuario.user.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="usuario-detail.edit({id:vm.usuario.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

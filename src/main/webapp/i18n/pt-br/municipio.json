@@ -1,0 +1,24 @@
+{
+    "smApp": {
+        "municipio" : {
+            "home": {
+                "title": "Municipios",
+                "createLabel": "Criar novo Municipio",
+                "createOrEditLabel": "Criar ou editar Municipio",
+                "search": "Pesquisar por Municipio"
+            },
+            "created": "Um novo Municipio é criado com o identificador {{ param }}",
+            "updated": "Um Municipio é atualizado com o identificador {{ param }}",
+            "deleted": "Um Municipio é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Municipio {{ id }}?"
+            },
+            "detail": {
+                "title": "Municipio"
+            },
+            "nome": "Nome",
+            "ibge": "Ibge",
+            "colaborador": "Colaborador"
+        }
+    }
+}

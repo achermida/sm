@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="smApp.parecerTecnico.detail.title">Parecer Tecnico</span> {{vm.parecerTecnico.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="smApp.parecerTecnico.status">Status</span></dt>
+        <dd>
+            <span data-translate="{{'smApp.StatusGeralEnum.' + vm.parecerTecnico.status}}">{{vm.parecerTecnico.status}}</span>
+        </dd>
+        <dt><span data-translate="smApp.parecerTecnico.parecNumero">Parec Numero</span></dt>
+        <dd>
+            <span>{{vm.parecerTecnico.parecNumero}}</span>
+        </dd>
+        <dt><span data-translate="smApp.parecerTecnico.parecObjetivo">Parec Objetivo</span></dt>
+        <dd>
+            <span>{{vm.parecerTecnico.parecObjetivo}}</span>
+        </dd>
+        <dt><span data-translate="smApp.parecerTecnico.parecAtendimentoIn">Parec Atendimento In</span></dt>
+        <dd>
+            <span>{{vm.parecerTecnico.parecAtendimentoIn}}</span>
+        </dd>
+        <dt><span data-translate="smApp.parecerTecnico.parecObservacao">Parec Observacao</span></dt>
+        <dd>
+            <span>{{vm.parecerTecnico.parecObservacao}}</span>
+        </dd>
+        <dt><span data-translate="smApp.parecerTecnico.parecDataInicio">Parec Data Inicio</span></dt>
+        <dd>
+            <span>{{vm.parecerTecnico.parecDataInicio | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="smApp.parecerTecnico.analise">Analise</span></dt>
+        <dd>
+            <a ui-sref="analise-detail({id:vm.parecerTecnico.analise.id})">{{vm.parecerTecnico.analise.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="parecer-tecnico-detail.edit({id:vm.parecerTecnico.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,12 @@
+{
+    "smApp": {
+        "StatusGeralEnum" : {
+            "null": "",
+            "ATIVO": "ATIVO",
+            "CANCELADO": "CANCELADO",
+            "INVALIDO": "INVALIDO",
+            "DEFERIDO": "DEFERIDO",
+            "INDEFERIDO": "INDEFERIDO"
+        }
+    }
+}

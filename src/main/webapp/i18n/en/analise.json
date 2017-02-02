@@ -1,0 +1,24 @@
+{
+    "smApp": {
+        "analise" : {
+            "home": {
+                "title": "Analises",
+                "createLabel": "Create a new Analise",
+                "createOrEditLabel": "Create or edit a Analise",
+                "search": "Search for Analise"
+            },
+            "created": "A new Analise is created with identifier {{ param }}",
+            "updated": "A Analise is updated with identifier {{ param }}",
+            "deleted": "A Analise is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Analise {{ id }}?"
+            },
+            "detail": {
+                "title": "Analise"
+            },
+            "status": "Status",
+            "pareceres": "Pareceres",
+            "requerimento": "Requerimento"
+        }
+    }
+}

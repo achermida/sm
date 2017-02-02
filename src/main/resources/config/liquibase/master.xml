@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+   <include file="classpath:config/liquibase/changelog/20170202005041_added_entity_constraints_Processo.xml" relativeToChangelogFile="false"/>
+   <include file="classpath:config/liquibase/changelog/20170202005132_added_entity_constraints_Requerimento.xml" relativeToChangelogFile="false"/>
+   <include file="classpath:config/liquibase/changelog/20170202015124_added_entity_constraints_Empreendimento.xml" relativeToChangelogFile="false"/>
+   <include file="classpath:config/liquibase/changelog/20170202111811_added_entity_constraints_Analise.xml" relativeToChangelogFile="false"/>
+   <include file="classpath:config/liquibase/changelog/20170202111812_added_entity_constraints_ParecerTecnico.xml" relativeToChangelogFile="false"/>
+   <include file="classpath:config/liquibase/changelog/20170202111813_added_entity_constraints_ParecerItens.xml" relativeToChangelogFile="false"/>
+   <include file="classpath:config/liquibase/changelog/20170202111814_added_entity_constraints_Licenca.xml" relativeToChangelogFile="false"/>
+   <include file="classpath:config/liquibase/changelog/20170202111815_added_entity_constraints_Usuario.xml" relativeToChangelogFile="false"/>
+   <include file="classpath:config/liquibase/changelog/20170202111816_added_entity_constraints_Colaborador.xml" relativeToChangelogFile="false"/>
+   <include file="classpath:config/liquibase/changelog/20170202111817_added_entity_constraints_Endereco.xml" relativeToChangelogFile="false"/>
+   <include file="classpath:config/liquibase/changelog/20170202111818_added_entity_constraints_Municipio.xml" relativeToChangelogFile="false"/>
+   <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

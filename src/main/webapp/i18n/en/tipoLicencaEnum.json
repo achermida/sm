@@ -1,0 +1,29 @@
+{
+    "smApp": {
+        "TipoLicencaEnum" : {
+            "null": "",
+            "NP": "NP",
+            "LAP": "LAP",
+            "LAI": "LAI",
+            "LAO": "LAO",
+            "AUA": "AUA",
+            "LAPLAI": "LAPLAI",
+            "LAILAO": "LAILAO",
+            "LAPLAILAO": "LAPLAILAO",
+            "RENLAO": "RENLAO",
+            "AMPLAP": "AMPLAP",
+            "AMPLAI": "AMPLAI",
+            "AMPLAO": "AMPLAO",
+            "AMPLAPLAI": "AMPLAPLAI",
+            "AMPLAPLAILAO": "AMPLAPLAILAO",
+            "RENAUA": "RENAUA",
+            "RENLAI": "RENLAI",
+            "AMPLAILAO": "AMPLAILAO",
+            "LAOCORRETIVA": "LAOCORRETIVA",
+            "EXPLORACAO_FLORESTAL": "EXPLORACAO_FLORESTAL",
+            "CONFAMBIENTAL": "CONFAMBIENTAL",
+            "FAUNA": "FAUNA",
+            "REPOSICAO": "REPOSICAO"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "smApp": {
+        "processo" : {
+            "home": {
+                "title": "Processos",
+                "createLabel": "Create a new Processo",
+                "createOrEditLabel": "Create or edit a Processo",
+                "search": "Search for Processo"
+            },
+            "created": "A new Processo is created with identifier {{ param }}",
+            "updated": "A Processo is updated with identifier {{ param }}",
+            "deleted": "A Processo is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Processo {{ id }}?"
+            },
+            "detail": {
+                "title": "Processo"
+            },
+            "status": "Status",
+            "procNumero": "Proc Numero",
+            "requerimentos": "Requerimentos",
+            "empreendimento": "Empreendimento"
+        }
+    }
+}

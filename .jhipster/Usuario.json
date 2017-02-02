@@ -1,0 +1,58 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "contato",
+            "otherEntityName": "contato",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usuario"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usuario"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "empreendimentos",
+            "otherEntityName": "empreendimento",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "responsaveis"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "StatusGeralEnum",
+            "fieldValues": "ATIVO,CANCELADO,INVALIDO,DEFERIDO,INDEFERIDO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cpf",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170202111815",
+    "entityTableName": "usuario",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "searchEngine": "elasticsearch"
+}

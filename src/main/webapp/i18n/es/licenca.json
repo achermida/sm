@@ -1,0 +1,30 @@
+{
+    "smApp": {
+        "licenca" : {
+            "home": {
+                "title": "Licencas",
+                "createLabel": "Crear nuevo Licenca",
+                "createOrEditLabel": "Crear o editar Licenca",
+                "search": "Search for Licenca"
+            },
+            "created": "Un nuevo Licenca ha sido creado con el identificador {{ param }}",
+            "updated": "Un Licenca ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Licenca ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Licenca {{ id }}?"
+            },
+            "detail": {
+                "title": "Licenca"
+            },
+            "status": "Status",
+            "licenNumero": "Licen Numero",
+            "licenCondicoesValidade": "Licen Condicoes Validade",
+            "licenValidade": "Licen Validade",
+            "licenCaracteristica": "Licen Caracteristica",
+            "licenDataEmissao": "Licen Data Emissao",
+            "licenDataEntrega": "Licen Data Entrega",
+            "tipo": "Tipo",
+            "empreendimento": "Empreendimento"
+        }
+    }
+}

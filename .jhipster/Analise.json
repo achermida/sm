@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "pareceres",
+            "otherEntityName": "parecerTecnico",
+            "otherEntityRelationshipName": "analise"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "requerimento",
+            "otherEntityName": "requerimento",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "StatusGeralEnum",
+            "fieldValues": "ATIVO,CANCELADO,INVALIDO,DEFERIDO,INDEFERIDO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170202111811",
+    "entityTableName": "analise",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

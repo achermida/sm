@@ -1,0 +1,32 @@
+{
+    "smApp": {
+        "empreendimento" : {
+            "home": {
+                "title": "Empreendimentos",
+                "createLabel": "Crear nuevo Empreendimento",
+                "createOrEditLabel": "Crear o editar Empreendimento",
+                "search": "Search for Empreendimento"
+            },
+            "created": "Un nuevo Empreendimento ha sido creado con el identificador {{ param }}",
+            "updated": "Un Empreendimento ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Empreendimento ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Empreendimento {{ id }}?"
+            },
+            "detail": {
+                "title": "Empreendimento"
+            },
+            "cnpj": "Cnpj",
+            "razaoSocial": "Razao Social",
+            "x": "X",
+            "y": "Y",
+            "dtCadastro": "Dt Cadastro",
+            "status": "Status",
+            "endereco": "Endereco",
+            "responsavel": "Responsavel",
+            "processos": "Processos",
+            "licencas": "Licencas",
+            "responsaveis": "Responsaveis"
+        }
+    }
+}

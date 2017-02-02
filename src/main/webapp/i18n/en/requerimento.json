@@ -1,0 +1,27 @@
+{
+    "smApp": {
+        "requerimento" : {
+            "home": {
+                "title": "Requerimentos",
+                "createLabel": "Create a new Requerimento",
+                "createOrEditLabel": "Create or edit a Requerimento",
+                "search": "Search for Requerimento"
+            },
+            "created": "A new Requerimento is created with identifier {{ param }}",
+            "updated": "A Requerimento is updated with identifier {{ param }}",
+            "deleted": "A Requerimento is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Requerimento {{ id }}?"
+            },
+            "detail": {
+                "title": "Requerimento"
+            },
+            "dtCadastro": "Dt Cadastro",
+            "status": "Status",
+            "fase": "Fase",
+            "obs": "Obs",
+            "analises": "Analises",
+            "processo": "Processo"
+        }
+    }
+}

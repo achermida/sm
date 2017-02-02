@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "parecerTecnico",
+            "otherEntityName": "parecerTecnico",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tipo",
+            "fieldType": "TipoParecerItensEnum",
+            "fieldValues": "FENOMENOS",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "paritDescricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paritSequencia",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170202111813",
+    "entityTableName": "parecer_itens",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "searchEngine": "elasticsearch"
+}

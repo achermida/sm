@@ -1,0 +1,163 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myLicencaLabel" data-translate="smApp.licenca.home.createOrEditLabel">Create or edit a Licenca</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.licenca.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.licenca.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.licenca.status" for="field_status">Status</label>
+            <select class="form-control" name="status" ng-model="vm.licenca.status" id="field_status" required>
+                <option value="ATIVO" data-translate="smApp.StatusGeralEnum.ATIVO">ATIVO</option>
+                <option value="CANCELADO" data-translate="smApp.StatusGeralEnum.CANCELADO">CANCELADO</option>
+                <option value="INVALIDO" data-translate="smApp.StatusGeralEnum.INVALIDO">INVALIDO</option>
+                <option value="DEFERIDO" data-translate="smApp.StatusGeralEnum.DEFERIDO">DEFERIDO</option>
+                <option value="INDEFERIDO" data-translate="smApp.StatusGeralEnum.INDEFERIDO">INDEFERIDO</option>
+            </select>
+            <div ng-show="editForm.status.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.status.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.licenca.licenNumero" for="field_licenNumero">Licen Numero</label>
+            <input type="text" class="form-control" name="licenNumero" id="field_licenNumero"
+                    ng-model="vm.licenca.licenNumero"
+                    required />
+            <div ng-show="editForm.licenNumero.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.licenNumero.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.licenca.licenCondicoesValidade" for="field_licenCondicoesValidade">Licen Condicoes Validade</label>
+            <input type="text" class="form-control" name="licenCondicoesValidade" id="field_licenCondicoesValidade"
+                    ng-model="vm.licenca.licenCondicoesValidade"
+                    required />
+            <div ng-show="editForm.licenCondicoesValidade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.licenCondicoesValidade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.licenca.licenValidade" for="field_licenValidade">Licen Validade</label>
+            <input type="number" class="form-control" name="licenValidade" id="field_licenValidade"
+                    ng-model="vm.licenca.licenValidade"
+                    required min="1" />
+            <div ng-show="editForm.licenValidade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.licenValidade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.licenValidade.$error.min" data-translate="entity.validation.min" translate-value-min="1">
+                    This field should be more than 1.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.licenValidade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.licenca.licenCaracteristica" for="field_licenCaracteristica">Licen Caracteristica</label>
+            <input type="text" class="form-control" name="licenCaracteristica" id="field_licenCaracteristica"
+                    ng-model="vm.licenca.licenCaracteristica"
+                    required />
+            <div ng-show="editForm.licenCaracteristica.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.licenCaracteristica.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.licenca.licenDataEmissao" for="field_licenDataEmissao">Licen Data Emissao</label>
+                <div class="input-group">
+                    <input id="field_licenDataEmissao" type="text" class="form-control" name="licenDataEmissao" uib-datepicker-popup="{{dateformat}}" ng-model="vm.licenca.licenDataEmissao" is-open="vm.datePickerOpenStatus.licenDataEmissao"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('licenDataEmissao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.licenDataEmissao.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.licenDataEmissao.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.licenca.licenDataEntrega" for="field_licenDataEntrega">Licen Data Entrega</label>
+                <div class="input-group">
+                    <input id="field_licenDataEntrega" type="text" class="form-control" name="licenDataEntrega" uib-datepicker-popup="{{dateformat}}" ng-model="vm.licenca.licenDataEntrega" is-open="vm.datePickerOpenStatus.licenDataEntrega"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('licenDataEntrega')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.licenca.tipo" for="field_tipo">Tipo</label>
+            <select class="form-control" name="tipo" ng-model="vm.licenca.tipo" id="field_tipo" required>
+                <option value="NP" data-translate="smApp.TipoLicencaEnum.NP">NP</option>
+                <option value="LAP" data-translate="smApp.TipoLicencaEnum.LAP">LAP</option>
+                <option value="LAI" data-translate="smApp.TipoLicencaEnum.LAI">LAI</option>
+                <option value="LAO" data-translate="smApp.TipoLicencaEnum.LAO">LAO</option>
+                <option value="AUA" data-translate="smApp.TipoLicencaEnum.AUA">AUA</option>
+                <option value="LAPLAI" data-translate="smApp.TipoLicencaEnum.LAPLAI">LAPLAI</option>
+                <option value="LAILAO" data-translate="smApp.TipoLicencaEnum.LAILAO">LAILAO</option>
+                <option value="LAPLAILAO" data-translate="smApp.TipoLicencaEnum.LAPLAILAO">LAPLAILAO</option>
+                <option value="RENLAO" data-translate="smApp.TipoLicencaEnum.RENLAO">RENLAO</option>
+                <option value="AMPLAP" data-translate="smApp.TipoLicencaEnum.AMPLAP">AMPLAP</option>
+                <option value="AMPLAI" data-translate="smApp.TipoLicencaEnum.AMPLAI">AMPLAI</option>
+                <option value="AMPLAO" data-translate="smApp.TipoLicencaEnum.AMPLAO">AMPLAO</option>
+                <option value="AMPLAPLAI" data-translate="smApp.TipoLicencaEnum.AMPLAPLAI">AMPLAPLAI</option>
+                <option value="AMPLAPLAILAO" data-translate="smApp.TipoLicencaEnum.AMPLAPLAILAO">AMPLAPLAILAO</option>
+                <option value="RENAUA" data-translate="smApp.TipoLicencaEnum.RENAUA">RENAUA</option>
+                <option value="RENLAI" data-translate="smApp.TipoLicencaEnum.RENLAI">RENLAI</option>
+                <option value="AMPLAILAO" data-translate="smApp.TipoLicencaEnum.AMPLAILAO">AMPLAILAO</option>
+                <option value="LAOCORRETIVA" data-translate="smApp.TipoLicencaEnum.LAOCORRETIVA">LAOCORRETIVA</option>
+                <option value="EXPLORACAO_FLORESTAL" data-translate="smApp.TipoLicencaEnum.EXPLORACAO_FLORESTAL">EXPLORACAO_FLORESTAL</option>
+                <option value="CONFAMBIENTAL" data-translate="smApp.TipoLicencaEnum.CONFAMBIENTAL">CONFAMBIENTAL</option>
+                <option value="FAUNA" data-translate="smApp.TipoLicencaEnum.FAUNA">FAUNA</option>
+                <option value="REPOSICAO" data-translate="smApp.TipoLicencaEnum.REPOSICAO">REPOSICAO</option>
+            </select>
+            <div ng-show="editForm.tipo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.tipo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="smApp.licenca.empreendimento" for="field_empreendimento">Empreendimento</label>
+            <select class="form-control" id="field_empreendimento" name="empreendimento" ng-model="vm.licenca.empreendimento" ng-options="empreendimento as empreendimento.id for empreendimento in vm.empreendimentos track by empreendimento.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

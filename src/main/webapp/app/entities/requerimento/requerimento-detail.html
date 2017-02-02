@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="smApp.requerimento.detail.title">Requerimento</span> {{vm.requerimento.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="smApp.requerimento.dtCadastro">Dt Cadastro</span></dt>
+        <dd>
+            <span>{{vm.requerimento.dtCadastro | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="smApp.requerimento.status">Status</span></dt>
+        <dd>
+            <span data-translate="{{'smApp.StatusGeralEnum.' + vm.requerimento.status}}">{{vm.requerimento.status}}</span>
+        </dd>
+        <dt><span data-translate="smApp.requerimento.fase">Fase</span></dt>
+        <dd>
+            <span data-translate="{{'smApp.ReqFaseEnum.' + vm.requerimento.fase}}">{{vm.requerimento.fase}}</span>
+        </dd>
+        <dt><span data-translate="smApp.requerimento.obs">Obs</span></dt>
+        <dd>
+            <span>{{vm.requerimento.obs}}</span>
+        </dd>
+        <dt><span data-translate="smApp.requerimento.processo">Processo</span></dt>
+        <dd>
+            <a ui-sref="processo-detail({id:vm.requerimento.processo.id})">{{vm.requerimento.processo.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="requerimento-detail.edit({id:vm.requerimento.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

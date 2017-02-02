@@ -1,0 +1,13 @@
+{
+    "smApp": {
+        "ReqFaseEnum" : {
+            "null": "",
+            "CADASTRADO": "CADASTRADO",
+            "FORMALIZADO": "FORMALIZADO",
+            "EQUIPEFORMADA": "EQUIPEFORMADA",
+            "EMANALISE": "EMANALISE",
+            "FINALIZADOLICENCIADO": "FINALIZADOLICENCIADO",
+            "FINALIZADOINDEFERIDO": "FINALIZADOINDEFERIDO"
+        }
+    }
+}

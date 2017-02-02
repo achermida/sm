@@ -1,0 +1,161 @@
+/* Responsavel pelo recebimento ou pagamento do lancamento*/
+entity Contato {
+    email String required,
+    telefone String
+}
+ 
+/* Categoria do lancamento ex: Alimentacao, Lazer, Presentes */
+entity Requerimento {
+    dtCadastro LocalDate required,
+    status StatusGeralEnum required,
+    fase ReqFaseEnum required,
+    obs String
+}
+
+entity Processo {
+    status StatusGeralEnum required,
+    procNumero String required
+}
+
+entity Analise {
+    status StatusGeralEnum required
+}
+
+entity ParecerTecnico {
+    status StatusGeralEnum required,
+    parecNumero String required,
+    parecObjetivo String required,
+	parecAtendimentoIn Boolean,
+	parecObservacao String required,
+    parecDataInicio LocalDate required
+}
+
+entity ParecerItens{
+tipo TipoParecerItensEnum required,
+paritDescricao String,
+paritSequencia Integer
+}
+
+enum TipoParecerItensEnum{
+FENOMENOS
+}
+
+entity Licenca {
+    status StatusGeralEnum required,
+    licenNumero String required,
+    licenCondicoesValidade String required,
+    licenValidade Integer required min(1),
+    licenCaracteristica String required,
+    licenDataEmissao LocalDate required,
+    licenDataEntrega LocalDate,
+    tipo TipoLicencaEnum required    
+}
+
+entity Usuario{
+	status StatusGeralEnum required,
+    nome String required,
+    cpf String required
+}
+
+entity Colaborador{
+	cargo CargoEnum required
+}
+ 
+entity Endereco{
+    logradouro String required,
+    numero Integer,
+    bairro String required,
+    complemento String,
+    cep String required
+}
+ 
+entity Municipio{
+    nome String required,
+    ibge Long required
+}
+ 
+/* Classe principal do nosso sistema de financas */
+entity Empreendimento {
+    cnpj String required, 
+    razaoSocial String,
+    x Double required,
+    y Double required,
+    dtCadastro LocalDate required,
+    status StatusGeralEnum required
+}
+ 
+/* Tipo de lancamento se o mesmo e uma despesa ou uma receita */
+enum StatusGeralEnum {
+    ATIVO, CANCELADO, INVALIDO, DEFERIDO, INDEFERIDO
+}
+
+enum ReqFaseEnum {
+    CADASTRADO, FORMALIZADO, EQUIPEFORMADA, EMANALISE, FINALIZADOLICENCIADO, FINALIZADOINDEFERIDO
+}
+
+enum CargoEnum {
+	ADMINISTRADOR, AUDITOR, 
+    PRESIDENTE, DIRETOR, GERENTE, 
+    ANALISTA
+}
+
+enum TipoLicencaEnum{
+	NP,
+	LAP,
+	LAI,
+	LAO,
+	AUA,
+	LAPLAI,
+	LAILAO,
+	LAPLAILAO,
+	RENLAO,
+	AMPLAP,
+	AMPLAI,
+	AMPLAO,
+	AMPLAPLAI,
+	AMPLAPLAILAO,
+	RENAUA,
+	RENLAI,
+	AMPLAILAO,
+	LAOCORRETIVA,
+	EXPLORACAO_FLORESTAL,
+	CONFAMBIENTAL,
+	FAUNA,
+	REPOSICAO
+}
+ 
+relationship OneToMany {
+    Empreendimento{processos} to Processo{empreendimento},
+    Processo{requerimentos} to Requerimento{processo},
+    Requerimento{analises} to Analise{requerimento},
+    Analise{pareceres} to ParecerTecnico,
+    Empreendimento{licencas} to Licenca{empreendimento},
+    Colaborador{municipio} to Municipio,
+    ParecerTecnico{itens} to ParecerItens
+}
+
+relationship ManyToMany{
+    Empreendimento{responsaveis} to Usuario{empreendimentos}
+}
+
+relationship OneToOne {
+    Empreendimento{endereco} to Endereco{empreendimento},
+    Endereco{municipio} to Municipio,
+    Usuario{contato} to Contato{usuario},
+    Colaborador{usuario} to Usuario,
+    Usuario{user} to User,
+    Empreendimento{responsavel} to Usuario
+}
+ 
+/* Paginacao com Scroll infinito */
+paginate Processo, Requerimento, Licenca with pagination
+ 
+/* Paginacao com paginas ex 1,2,3 */
+//paginate Lancamento with infinite-scroll
+ 
+/* Quero que o JHipster crie o service de lancamentos para utilizacao */
+service Processo with serviceClass
+service Requerimento with serviceClass
+service Licenca with serviceClass
+
+search * with elasticsearch except Analise

@@ -1,0 +1,25 @@
+{
+    "smApp": {
+        "parecerItens" : {
+            "home": {
+                "title": "Parecer Itens",
+                "createLabel": "Criar novo Parecer Itens",
+                "createOrEditLabel": "Criar ou editar Parecer Itens",
+                "search": "Pesquisar por Parecer Itens"
+            },
+            "created": "Um novo Parecer Itens é criado com o identificador {{ param }}",
+            "updated": "Um Parecer Itens é atualizado com o identificador {{ param }}",
+            "deleted": "Um Parecer Itens é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Parecer Itens {{ id }}?"
+            },
+            "detail": {
+                "title": "Parecer Itens"
+            },
+            "tipo": "Tipo",
+            "paritDescricao": "Parit Descricao",
+            "paritSequencia": "Parit Sequencia",
+            "parecerTecnico": "Parecer Tecnico"
+        }
+    }
+}

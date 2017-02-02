@@ -1,0 +1,29 @@
+{
+    "smApp": {
+        "parecerTecnico" : {
+            "home": {
+                "title": "Parecer Tecnicos",
+                "createLabel": "Criar novo Parecer Tecnico",
+                "createOrEditLabel": "Criar ou editar Parecer Tecnico",
+                "search": "Pesquisar por Parecer Tecnico"
+            },
+            "created": "Um novo Parecer Tecnico é criado com o identificador {{ param }}",
+            "updated": "Um Parecer Tecnico é atualizado com o identificador {{ param }}",
+            "deleted": "Um Parecer Tecnico é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Parecer Tecnico {{ id }}?"
+            },
+            "detail": {
+                "title": "Parecer Tecnico"
+            },
+            "status": "Status",
+            "parecNumero": "Parec Numero",
+            "parecObjetivo": "Parec Objetivo",
+            "parecAtendimentoIn": "Parec Atendimento In",
+            "parecObservacao": "Parec Observacao",
+            "parecDataInicio": "Parec Data Inicio",
+            "analise": "Analise",
+            "itens": "Itens"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "smApp": {
+        "colaborador" : {
+            "home": {
+                "title": "Colaboradors",
+                "createLabel": "Crear nuevo Colaborador",
+                "createOrEditLabel": "Crear o editar Colaborador",
+                "search": "Search for Colaborador"
+            },
+            "created": "Un nuevo Colaborador ha sido creado con el identificador {{ param }}",
+            "updated": "Un Colaborador ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Colaborador ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Colaborador {{ id }}?"
+            },
+            "detail": {
+                "title": "Colaborador"
+            },
+            "cargo": "Cargo",
+            "usuario": "Usuario",
+            "municipio": "Municipio"
+        }
+    }
+}

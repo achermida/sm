@@ -1,0 +1,12 @@
+version: '2'
+services:
+    sm-postgresql:
+        container_name: sm-postgresql
+        image: postgres:9.5.4
+        # volumes:
+        #     - ~/volumes/jhipster/sm/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=sm
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

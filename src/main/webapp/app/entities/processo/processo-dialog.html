@@ -1,0 +1,60 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProcessoLabel" data-translate="smApp.processo.home.createOrEditLabel">Create or edit a Processo</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.processo.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.processo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.processo.status" for="field_status">Status</label>
+            <select class="form-control" name="status" ng-model="vm.processo.status" id="field_status" required>
+                <option value="ATIVO" data-translate="smApp.StatusGeralEnum.ATIVO">ATIVO</option>
+                <option value="CANCELADO" data-translate="smApp.StatusGeralEnum.CANCELADO">CANCELADO</option>
+                <option value="INVALIDO" data-translate="smApp.StatusGeralEnum.INVALIDO">INVALIDO</option>
+                <option value="DEFERIDO" data-translate="smApp.StatusGeralEnum.DEFERIDO">DEFERIDO</option>
+                <option value="INDEFERIDO" data-translate="smApp.StatusGeralEnum.INDEFERIDO">INDEFERIDO</option>
+            </select>
+            <div ng-show="editForm.status.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.status.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.processo.procNumero" for="field_procNumero">Proc Numero</label>
+            <input type="text" class="form-control" name="procNumero" id="field_procNumero"
+                    ng-model="vm.processo.procNumero"
+                    required />
+            <div ng-show="editForm.procNumero.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.procNumero.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="smApp.processo.empreendimento" for="field_empreendimento">Empreendimento</label>
+            <select class="form-control" id="field_empreendimento" name="empreendimento" ng-model="vm.processo.empreendimento" ng-options="empreendimento as empreendimento.id for empreendimento in vm.empreendimentos track by empreendimento.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

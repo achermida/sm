@@ -1,0 +1,57 @@
+
+<div>
+    <h2><span data-translate="smApp.empreendimento.detail.title">Empreendimento</span> {{vm.empreendimento.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="smApp.empreendimento.cnpj">Cnpj</span></dt>
+        <dd>
+            <span>{{vm.empreendimento.cnpj}}</span>
+        </dd>
+        <dt><span data-translate="smApp.empreendimento.razaoSocial">Razao Social</span></dt>
+        <dd>
+            <span>{{vm.empreendimento.razaoSocial}}</span>
+        </dd>
+        <dt><span data-translate="smApp.empreendimento.x">X</span></dt>
+        <dd>
+            <span>{{vm.empreendimento.x}}</span>
+        </dd>
+        <dt><span data-translate="smApp.empreendimento.y">Y</span></dt>
+        <dd>
+            <span>{{vm.empreendimento.y}}</span>
+        </dd>
+        <dt><span data-translate="smApp.empreendimento.dtCadastro">Dt Cadastro</span></dt>
+        <dd>
+            <span>{{vm.empreendimento.dtCadastro | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="smApp.empreendimento.status">Status</span></dt>
+        <dd>
+            <span data-translate="{{'smApp.StatusGeralEnum.' + vm.empreendimento.status}}">{{vm.empreendimento.status}}</span>
+        </dd>
+        <dt><span data-translate="smApp.empreendimento.endereco">Endereco</span></dt>
+        <dd>
+            <a ui-sref="endereco-detail({id:vm.empreendimento.endereco.id})">{{vm.empreendimento.endereco.id}}</a>
+        </dd>
+        <dt><span data-translate="smApp.empreendimento.responsavel">Responsavel</span></dt>
+        <dd>
+            <a ui-sref="usuario-detail({id:vm.empreendimento.responsavel.id})">{{vm.empreendimento.responsavel.id}}</a>
+        </dd>
+        <dt><span data-translate="smApp.empreendimento.responsaveis">Responsaveis</span></dt>
+        <dd>
+            <span ng-repeat="responsaveis in vm.empreendimento.responsaveis">
+                <a ui-sref="usuario-detail({id: responsaveis.id})">{{responsaveis.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="empreendimento-detail.edit({id:vm.empreendimento.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Empreendimento.
+    -->
+    <changeSet id="20170202015124-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="endereco_id"
+                                 baseTableName="empreendimento"
+                                 constraintName="fk_empreendimento_endereco_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="endereco"/>
+
+        <addForeignKeyConstraint baseColumnNames="responsavel_id"
+                                 baseTableName="empreendimento"
+                                 constraintName="fk_empreendimento_responsavel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="usuario"/>
+
+        <addForeignKeyConstraint baseColumnNames="empreendimentos_id"
+                                 baseTableName="empreendimento_responsaveis"
+                                 constraintName="fk_empreendimento_responsaveis_empreendimentos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="empreendimento"/>
+        <addForeignKeyConstraint baseColumnNames="responsaveis_id"
+                                 baseTableName="empreendimento_responsaveis"
+                                 constraintName="fk_empreendimento_responsaveis_responsaveis_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="usuario"/>
+        
+    </changeSet>
+</databaseChangeLog>

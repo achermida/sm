@@ -1,0 +1,76 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "empreendimento",
+            "otherEntityName": "empreendimento",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "StatusGeralEnum",
+            "fieldValues": "ATIVO,CANCELADO,INVALIDO,DEFERIDO,INDEFERIDO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "licenNumero",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "licenCondicoesValidade",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "licenValidade",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 1
+        },
+        {
+            "fieldName": "licenCaracteristica",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "licenDataEmissao",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "licenDataEntrega",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "TipoLicencaEnum",
+            "fieldValues": "NP,LAP,LAI,LAO,AUA,LAPLAI,LAILAO,LAPLAILAO,RENLAO,AMPLAP,AMPLAI,AMPLAO,AMPLAPLAI,AMPLAPLAILAO,RENAUA,RENLAI,AMPLAILAO,LAOCORRETIVA,EXPLORACAO_FLORESTAL,CONFAMBIENTAL,FAUNA,REPOSICAO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170202111814",
+    "entityTableName": "licenca",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "searchEngine": "elasticsearch"
+}

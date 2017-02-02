@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "requerimentos",
+            "otherEntityName": "requerimento",
+            "otherEntityRelationshipName": "processo"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "empreendimento",
+            "otherEntityName": "empreendimento",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "StatusGeralEnum",
+            "fieldValues": "ATIVO,CANCELADO,INVALIDO,DEFERIDO,INDEFERIDO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "procNumero",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170202005041",
+    "entityTableName": "processo",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "searchEngine": "elasticsearch"
+}

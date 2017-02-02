@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="smApp.licenca.detail.title">Licenca</span> {{vm.licenca.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="smApp.licenca.status">Status</span></dt>
+        <dd>
+            <span data-translate="{{'smApp.StatusGeralEnum.' + vm.licenca.status}}">{{vm.licenca.status}}</span>
+        </dd>
+        <dt><span data-translate="smApp.licenca.licenNumero">Licen Numero</span></dt>
+        <dd>
+            <span>{{vm.licenca.licenNumero}}</span>
+        </dd>
+        <dt><span data-translate="smApp.licenca.licenCondicoesValidade">Licen Condicoes Validade</span></dt>
+        <dd>
+            <span>{{vm.licenca.licenCondicoesValidade}}</span>
+        </dd>
+        <dt><span data-translate="smApp.licenca.licenValidade">Licen Validade</span></dt>
+        <dd>
+            <span>{{vm.licenca.licenValidade}}</span>
+        </dd>
+        <dt><span data-translate="smApp.licenca.licenCaracteristica">Licen Caracteristica</span></dt>
+        <dd>
+            <span>{{vm.licenca.licenCaracteristica}}</span>
+        </dd>
+        <dt><span data-translate="smApp.licenca.licenDataEmissao">Licen Data Emissao</span></dt>
+        <dd>
+            <span>{{vm.licenca.licenDataEmissao | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="smApp.licenca.licenDataEntrega">Licen Data Entrega</span></dt>
+        <dd>
+            <span>{{vm.licenca.licenDataEntrega | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="smApp.licenca.tipo">Tipo</span></dt>
+        <dd>
+            <span data-translate="{{'smApp.TipoLicencaEnum.' + vm.licenca.tipo}}">{{vm.licenca.tipo}}</span>
+        </dd>
+        <dt><span data-translate="smApp.licenca.empreendimento">Empreendimento</span></dt>
+        <dd>
+            <a ui-sref="empreendimento-detail({id:vm.licenca.empreendimento.id})">{{vm.licenca.empreendimento.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="licenca-detail.edit({id:vm.licenca.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

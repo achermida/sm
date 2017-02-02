@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myParecerItensLabel" data-translate="smApp.parecerItens.home.createOrEditLabel">Create or edit a Parecer Itens</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.parecerItens.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.parecerItens.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.parecerItens.tipo" for="field_tipo">Tipo</label>
+            <select class="form-control" name="tipo" ng-model="vm.parecerItens.tipo" id="field_tipo" required>
+                <option value="FENOMENOS" data-translate="smApp.TipoParecerItensEnum.FENOMENOS">FENOMENOS</option>
+            </select>
+            <div ng-show="editForm.tipo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.tipo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.parecerItens.paritDescricao" for="field_paritDescricao">Parit Descricao</label>
+            <input type="text" class="form-control" name="paritDescricao" id="field_paritDescricao"
+                    ng-model="vm.parecerItens.paritDescricao"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.parecerItens.paritSequencia" for="field_paritSequencia">Parit Sequencia</label>
+            <input type="number" class="form-control" name="paritSequencia" id="field_paritSequencia"
+                    ng-model="vm.parecerItens.paritSequencia"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="smApp.parecerItens.parecerTecnico" for="field_parecerTecnico">Parecer Tecnico</label>
+            <select class="form-control" id="field_parecerTecnico" name="parecerTecnico" ng-model="vm.parecerItens.parecerTecnico" ng-options="parecerTecnico as parecerTecnico.id for parecerTecnico in vm.parecertecnicos track by parecerTecnico.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

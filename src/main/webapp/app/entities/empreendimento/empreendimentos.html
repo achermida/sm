@@ -1,0 +1,97 @@
+<div>
+    <h2 data-translate="smApp.empreendimento.home.title">Empreendimentos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="empreendimento.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="smApp.empreendimento.home.createLabel">
+                        Create new Empreendimento
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'smApp.empreendimento.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="smApp.empreendimento.cnpj">Cnpj</span></th>
+                    <th><span data-translate="smApp.empreendimento.razaoSocial">Razao Social</span></th>
+                    <th><span data-translate="smApp.empreendimento.x">X</span></th>
+                    <th><span data-translate="smApp.empreendimento.y">Y</span></th>
+                    <th><span data-translate="smApp.empreendimento.dtCadastro">Dt Cadastro</span></th>
+                    <th><span data-translate="smApp.empreendimento.status">Status</span></th>
+                    <th><span data-translate="smApp.empreendimento.endereco">Endereco</span></th>
+                    <th><span data-translate="smApp.empreendimento.responsavel">Responsavel</span></th>
+                    <th><span data-translate="smApp.empreendimento.responsaveis">Responsaveis</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="empreendimento in vm.empreendimentos track by empreendimento.id">
+                    <td><a ui-sref="empreendimento-detail({id:empreendimento.id})">{{empreendimento.id}}</a></td>
+                    <td>{{empreendimento.cnpj}}</td>
+                    <td>{{empreendimento.razaoSocial}}</td>
+                    <td>{{empreendimento.x}}</td>
+                    <td>{{empreendimento.y}}</td>
+                        <td>{{empreendimento.dtCadastro | date:'mediumDate'}}</td>
+                    <td data-translate="{{'smApp.StatusGeralEnum.' + empreendimento.status}}">{{empreendimento.status}}</td>
+                    <td>
+                        <a ui-sref="endereco-detail({id:empreendimento.endereco.id})">{{empreendimento.endereco.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="usuario-detail({id:empreendimento.responsavel.id})">{{empreendimento.responsavel.id}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="responsaveis in empreendimento.responsaveis">
+                            <a class="form-control-static" ui-sref="usuario-detail({id: responsaveis.id})">{{responsaveis.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="empreendimento-detail({id:empreendimento.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="empreendimento.edit({id:empreendimento.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="empreendimento.delete({id:empreendimento.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

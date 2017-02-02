@@ -1,0 +1,49 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myColaboradorLabel" data-translate="smApp.colaborador.home.createOrEditLabel">Create or edit a Colaborador</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.colaborador.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.colaborador.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="smApp.colaborador.cargo" for="field_cargo">Cargo</label>
+            <select class="form-control" name="cargo" ng-model="vm.colaborador.cargo" id="field_cargo" required>
+                <option value="ADMINISTRADOR" data-translate="smApp.CargoEnum.ADMINISTRADOR">ADMINISTRADOR</option>
+                <option value="AUDITOR" data-translate="smApp.CargoEnum.AUDITOR">AUDITOR</option>
+                <option value="PRESIDENTE" data-translate="smApp.CargoEnum.PRESIDENTE">PRESIDENTE</option>
+                <option value="DIRETOR" data-translate="smApp.CargoEnum.DIRETOR">DIRETOR</option>
+                <option value="GERENTE" data-translate="smApp.CargoEnum.GERENTE">GERENTE</option>
+                <option value="ANALISTA" data-translate="smApp.CargoEnum.ANALISTA">ANALISTA</option>
+            </select>
+            <div ng-show="editForm.cargo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cargo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="smApp.colaborador.usuario" for="field_usuario">Usuario</label>
+            <select class="form-control" id="field_usuario" name="usuario" ng-model="vm.colaborador.usuario" ng-options="usuario as usuario.id for usuario in vm.usuarios | orderBy:'id' track by usuario.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

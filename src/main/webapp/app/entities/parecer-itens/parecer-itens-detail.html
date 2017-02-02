@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="smApp.parecerItens.detail.title">Parecer Itens</span> {{vm.parecerItens.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="smApp.parecerItens.tipo">Tipo</span></dt>
+        <dd>
+            <span data-translate="{{'smApp.TipoParecerItensEnum.' + vm.parecerItens.tipo}}">{{vm.parecerItens.tipo}}</span>
+        </dd>
+        <dt><span data-translate="smApp.parecerItens.paritDescricao">Parit Descricao</span></dt>
+        <dd>
+            <span>{{vm.parecerItens.paritDescricao}}</span>
+        </dd>
+        <dt><span data-translate="smApp.parecerItens.paritSequencia">Parit Sequencia</span></dt>
+        <dd>
+            <span>{{vm.parecerItens.paritSequencia}}</span>
+        </dd>
+        <dt><span data-translate="smApp.parecerItens.parecerTecnico">Parecer Tecnico</span></dt>
+        <dd>
+            <a ui-sref="parecer-tecnico-detail({id:vm.parecerItens.parecerTecnico.id})">{{vm.parecerItens.parecerTecnico.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="parecer-itens-detail.edit({id:vm.parecerItens.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,9 @@
+{
+    "smApp": {
+        "StatusEmpreendimentoEnum" : {
+            "null": "",
+            "ATIVO": "ATIVO",
+            "CANCELADO": "CANCELADO"
+        }
+    }
+}

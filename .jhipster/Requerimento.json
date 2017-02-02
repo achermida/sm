@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "analises",
+            "otherEntityName": "analise",
+            "otherEntityRelationshipName": "requerimento"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "processo",
+            "otherEntityName": "processo",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dtCadastro",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "StatusGeralEnum",
+            "fieldValues": "ATIVO,CANCELADO,INVALIDO,DEFERIDO,INDEFERIDO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fase",
+            "fieldType": "ReqFaseEnum",
+            "fieldValues": "CADASTRADO,FORMALIZADO,EQUIPEFORMADA,EMANALISE,FINALIZADOLICENCIADO,FINALIZADOINDEFERIDO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "obs",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170202005132",
+    "javadoc": "Categoria do lancamento ex: Alimentacao, Lazer, Presentes",
+    "entityTableName": "requerimento",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "searchEngine": "elasticsearch"
+}
